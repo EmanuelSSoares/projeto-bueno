@@ -46,8 +46,6 @@ class UserController extends Controller
         $user->accessLevels()->attach($accessLevel->id);
     }
 
-    $user->notify(new NovoUsuarioCriado);
-
     // Redirecionamento ou retorno de uma resposta JSON
     return redirect()->route('users.index')->with('success', 'Usuário criado com sucesso!');
 }

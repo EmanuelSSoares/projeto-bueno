@@ -14,7 +14,7 @@
         <!-- Links de Navegação -->
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item" style="text-decoration: none;">
+                <li class="nav-item">
                     <x-nav-link :href="route('dashboard')">
                         <strong>Tela Principal</strong>
                     </x-nav-link>
