@@ -20,6 +20,10 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        // Insere o usuário inicial
+        DB::table('users')->insert([
+            ['name' => 'Bueno Netwoks', 'email' => 'contato@buenonetworks.com.br', 'password' => bcrypt('qwer1234')],
+        ]);
     }
 
     /**

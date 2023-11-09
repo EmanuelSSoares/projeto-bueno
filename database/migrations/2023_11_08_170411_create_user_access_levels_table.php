@@ -14,6 +14,9 @@ class CreateUserAccessLevelsTable extends Migration
             $table->foreignId('access_level_id')->constrained();
             $table->timestamps();
         });
+        DB::table('user_access_levels')->insert([
+            ['user_id' => '1', 'access_level_id' => '1'],
+        ]);
     }
 
     public function down()

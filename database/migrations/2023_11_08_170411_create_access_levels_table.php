@@ -13,6 +13,10 @@ class CreateAccessLevelsTable extends Migration
             $table->string('name')->unique();
             $table->timestamps();
         });
+        DB::table('access_levels')->insert([
+            ['name' => 'admin'],
+            ['name' => 'common'],
+        ]);
     }
 
     public function down()
