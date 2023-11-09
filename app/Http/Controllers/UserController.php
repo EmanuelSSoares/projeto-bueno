@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\AccessLevel;
+use App\Notifications\NovoUsuarioCriado;
 
 class UserController extends Controller
 {
@@ -44,6 +45,8 @@ class UserController extends Controller
     if ($accessLevel) {
         $user->accessLevels()->attach($accessLevel->id);
     }
+
+    $user->notify(new NovoUsuarioCriado);
 
     // Redirecionamento ou retorno de uma resposta JSON
     return redirect()->route('users.index')->with('success', 'Usuário criado com sucesso!');
